@@ -4,33 +4,234 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>StoreHouse — Support</title>
+  <meta name="description" content="Help with StoreHouse, the Bible reading plan app for iPhone, iPad and Mac.">
   <style>
-    :root { color-scheme: light dark; --text: #1d1d1f; --muted: #6e6e73; --rule: #d2d2d7; --band: #f5f5f7; --page: #ffffff; }
-    @media (prefers-color-scheme: dark) { :root { --text: #f5f5f7; --muted: #a1a1a6; --rule: #38383a; --band: #1c1c1e; --page: #000000; } }
+    :root { color-scheme: light dark; --text: #1d1d1f; --muted: #6e6e73; --rule: #d2d2d7; --band: #f5f5f7; --page: #ffffff; --accent: #5c7536; --on-accent: #ffffff; }
+    @media (prefers-color-scheme: dark) { :root { --text: #f5f5f7; --muted: #a1a1a6; --rule: #38383a; --band: #1c1c1e; --page: #000000; --accent: #94ac5e; --on-accent: #10140a; } }
     body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; margin: 0; color: var(--text); background: var(--page); }
     header { padding: 2rem 1.25rem; background: var(--band); }
-    header > div, main { max-width: 760px; margin: 0 auto; }
+    header > div, main, footer > div { max-width: 760px; margin: 0 auto; }
     main { padding: 1.25rem; }
     h1 { margin: 0 0 .25rem; font-size: clamp(1.75rem, 5vw, 2.25rem); line-height: 1.2; }
+    h2 { margin: 2.5rem 0 .5rem; font-size: 1.25rem; }
+    p { margin: .5rem 0; }
     ul { padding-left: 1.25rem; }
     li { margin: .35rem 0; }
     a { color: inherit; }
     .muted { color: var(--muted); }
+
+    .contact { margin-top: .5rem; padding: 1.25rem; border: 1px solid var(--rule); border-radius: 14px; }
+    .contact h2 { margin-top: 0; }
+    .button { display: inline-block; margin-top: .75rem; padding: .6rem 1.2rem; border-radius: 999px; background: var(--accent); color: var(--on-accent); font-weight: 600; text-decoration: none; }
+    .button:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+    .requirements { margin-top: 1rem; font-size: .95rem; }
+
+    nav ul { display: flex; flex-wrap: wrap; gap: .5rem; list-style: none; padding: 0; margin: 1.5rem 0 0; }
+    nav li { margin: 0; }
+    nav a { display: inline-block; padding: .3rem .8rem; border: 1px solid var(--rule); border-radius: 999px; font-size: .9rem; text-decoration: none; }
+    nav a:hover { background: var(--band); }
+
+    details { border-bottom: 1px solid var(--rule); }
+    h2 + details { border-top: 1px solid var(--rule); }
+    summary { cursor: pointer; padding: .8rem 1.75rem .8rem 0; font-weight: 600; list-style: none; position: relative; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "+"; position: absolute; right: .25rem; top: .7rem; font-weight: 400; font-size: 1.25rem; line-height: 1.2; color: var(--muted); }
+    details[open] summary::after { content: "−"; }
+    summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    details > :not(summary) { margin-top: 0; }
+    details > :last-child { margin-bottom: 1rem; }
+
+    footer { margin-top: 3rem; padding: 1.25rem; font-size: .9rem; color: var(--muted); border-top: 1px solid var(--rule); }
+    footer p { margin: .25rem 0; }
   </style>
 </head>
 <body>
   <header>
     <div>
-      <h1>StoreHouse</h1>
+      <h1>StoreHouse Support</h1>
       <p class="muted">Bible reading plans, and a record of what you’ve read.</p>
     </div>
   </header>
   <main>
-    <p>Questions, problems or ideas? Email <a href="mailto:daragh.dev@icloud.com">daragh.dev@icloud.com</a>.</p>
-    <ul>
-      <li><a href="privacy/">Privacy Policy</a></li>
-      <li><a href="terms/">Terms of Use</a></li>
-    </ul>
+    <section class="contact" aria-labelledby="contact">
+      <h2 id="contact">Get in touch</h2>
+      <p>
+        Questions, problems or ideas? Send an email. It helps to say which device you’re using, its iOS, iPadOS or
+        macOS version, and what happened.
+      </p>
+      <a class="button" href="mailto:daragh.dev@icloud.com?subject=StoreHouse%20Support">Email daragh.dev@icloud.com</a>
+      <p class="requirements muted">
+        StoreHouse runs on iPhone and iPad with iOS&nbsp;26 or iPadOS&nbsp;26 or later, and on Mac with macOS&nbsp;26 or later.
+      </p>
+    </section>
+
+    <nav aria-label="Topics">
+      <ul>
+        <li><a href="#getting-started">Getting started</a></li>
+        <li><a href="#reading">Reading and streaks</a></li>
+        <li><a href="#sync">iCloud sync</a></li>
+        <li><a href="#reminders">Reminders and widgets</a></li>
+        <li><a href="#mac">On a Mac</a></li>
+        <li><a href="#data">Your data</a></li>
+      </ul>
+    </nav>
+
+    <h2 id="getting-started">Getting started</h2>
+    <details>
+      <summary>How do I choose a reading plan?</summary>
+      <p>Tap <strong>Choose a Plan</strong>, then pick one:</p>
+      <ul>
+        <li><strong>Yearly:</strong> the whole Bible in a year, book by book or in the order events happened.</li>
+        <li><strong>Memorial:</strong> the events before and after the Memorial, each day’s reading on the date it happened.</li>
+        <li><strong>By Topic:</strong> one part of the Bible, or one account followed through it, such as Israel’s history or Jesus’ life.</li>
+        <li><strong>Choose the Books:</strong> make your own plan from any books you like.</li>
+      </ul>
+      <p>Then choose how fast: a day at a time, a number of chapters a day, by a finish date, or at your own pace.</p>
+    </details>
+    <details>
+      <summary>Can I follow more than one plan?</summary>
+      <p>Yes. Tap <strong>Add a Plan</strong> to read another beside the first. Each keeps its own pace.</p>
+    </details>
+    <details>
+      <summary>Where’s the Bible text?</summary>
+      <p>
+        StoreHouse doesn’t include any Bible text. Tapping a passage opens it in the JW Library app or, if that isn’t
+        installed, on jw.org, and marks it as read.
+      </p>
+    </details>
+
+    <h2 id="reading">Reading and streaks</h2>
+    <details>
+      <summary>How do I mark something as read without opening it?</summary>
+      <p>
+        Swipe left on a passage and tap <strong>Read</strong>, or touch and hold it for more options. To undo, swipe
+        again and tap <strong>Unread</strong>.
+      </p>
+      <p>
+        Read some of the Bible before you started using StoreHouse? Mark those chapters or whole books as read and
+        they’ll count toward your plans and stats.
+      </p>
+    </details>
+    <details>
+      <summary>I missed a day. Is my streak gone?</summary>
+      <p>
+        Not yet. Read two days’ worth the next day and the missed day counts, so your streak carries on. Two days
+        missed in a row can’t be made up.
+      </p>
+    </details>
+    <details>
+      <summary>What’s the difference between starting over and stopping a plan?</summary>
+      <p>
+        <strong>Start Over</strong> clears that plan’s checkmarks so you can read it again.
+        <strong>Stop Following This Plan</strong> keeps your place for later. Either way, your reading history and
+        streaks stay.
+      </p>
+    </details>
+
+    <h2 id="sync">iCloud sync</h2>
+    <details>
+      <summary>How does sync work?</summary>
+      <p>
+        Your reading history and plans sync through your own iCloud account to every iPhone, iPad and Mac signed in
+        to the same Apple Account. There’s nothing to set up and no StoreHouse account.
+      </p>
+      <p>
+        Settings such as the daily reminder and the Live Activity are set on each device separately.
+      </p>
+    </details>
+    <details>
+      <summary>My reading isn’t showing up on my other device.</summary>
+      <ul>
+        <li>Check that both devices are signed in to the same Apple Account.</li>
+        <li>Check that iCloud is on for StoreHouse, in the iCloud section of the Settings app, or of System Settings on a Mac.</li>
+        <li>Open StoreHouse on both devices while they’re online, and give it a minute to catch up.</li>
+      </ul>
+    </details>
+
+    <h2 id="reminders">Reminders, Lock Screen and widgets</h2>
+    <details>
+      <summary>How do I get a daily reminder?</summary>
+      <p>
+        In StoreHouse’s Settings, turn on <strong>Daily Reminder</strong> and pick a time. It names today’s reading,
+        and doesn’t come if you’ve already read. Choose <strong>Remind Again</strong> to have it come back every few
+        minutes until you have.
+      </p>
+    </details>
+    <details>
+      <summary>My reminder isn’t arriving.</summary>
+      <ul>
+        <li>Make sure notifications are allowed in Settings › Notifications › StoreHouse, or System Settings › Notifications › StoreHouse on a Mac.</li>
+        <li>Check that a Focus isn’t silencing them.</li>
+        <li>The reminder doesn’t come on days you’ve already read.</li>
+      </ul>
+    </details>
+    <details>
+      <summary>How do I show today’s reading on the Lock Screen?</summary>
+      <p>
+        Turn on <strong>Live Activity</strong> in StoreHouse’s Settings. It’s off until you turn it on. Today’s reading
+        then shows on the Lock Screen and, on iPhones that have one, in the Dynamic Island. It’s shown for plans read a
+        day at a time.
+      </p>
+      <p>
+        If StoreHouse says Live Activities are turned off, allow them in Settings › StoreHouse.
+      </p>
+    </details>
+    <details>
+      <summary>How do I add a widget?</summary>
+      <p>
+        Touch and hold an empty part of your Home Screen, tap <strong>Edit</strong> › <strong>Add Widget</strong>, and
+        search for StoreHouse.
+      </p>
+      <ul>
+        <li><strong>Today’s Reading</strong> shows what’s left to read today, or what’s next in your plan.</li>
+        <li><strong>Streak</strong> shows how many days in a row you’ve read, and this week’s reading.</li>
+        <li><strong>Read Next</strong> is a control for Control Centre or the Lock Screen that opens what’s next in your Bible app.</li>
+      </ul>
+    </details>
+
+    <h2 id="mac">On a Mac</h2>
+    <details>
+      <summary>Can I see today’s reading without opening the app?</summary>
+      <p>
+        Yes. StoreHouse can show today’s reading in the menu bar and count what’s left on its Dock icon. Turn either
+        on or off in StoreHouse’s Settings.
+      </p>
+    </details>
+    <details>
+      <summary>Can I export my reading history?</summary>
+      <p>
+        Yes. Choose <strong>File › Export Reading History…</strong> (Shift-Command-E) and pick where to save it.
+      </p>
+    </details>
+
+    <h2 id="data">Your data</h2>
+    <details>
+      <summary>Who can see my reading?</summary>
+      <p>
+        Only you. There’s no account, no ads and no tracking, and nothing is sent to us. Your reading is kept on your
+        devices and in your own iCloud account. See the <a href="privacy/">Privacy Policy</a>.
+      </p>
+    </details>
+    <details>
+      <summary>How do I delete everything?</summary>
+      <p>
+        <strong>Erase All Data</strong>, in StoreHouse’s Settings, deletes your reading history and plans on all your
+        devices and in iCloud, and resets your settings. This can’t be undone.
+      </p>
+    </details>
+
+    <h2>Didn’t find your answer?</h2>
+    <p>Email <a href="mailto:daragh.dev@icloud.com?subject=StoreHouse%20Support">daragh.dev@icloud.com</a> and we’ll help.</p>
   </main>
+  <footer>
+    <div>
+      <p><a href="privacy/">Privacy Policy</a> · <a href="terms/">Terms of Use</a></p>
+      <p>
+        StoreHouse is an independent app. It isn’t made, endorsed or sponsored by the publishers of JW Library or
+        jw.org.
+      </p>
+      <p>© 2026 StoreHouse. All rights reserved.</p>
+    </div>
+  </footer>
 </body>
 </html>
